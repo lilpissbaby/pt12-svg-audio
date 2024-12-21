@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Àudio i Vídeo</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      svg {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        cursor: pointer;
+      }
+
+      svg.animate {
+        transform: scale(2); /* Hace grande el SVG */
+        opacity: 0; /* Se desvanece */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Deixem l'etiqueta audio sense controls. Veieu que desapareix tot. -->
+    <audio id="player">
+      <source src="media/techbg.mp3" type="audio/mp3" />
+      Ho sento, el teu navegador no suporta àudio d'HTML5.
+    </audio>
+    <!-- Afegim una capa que mostra si l'àudio s'està reproduint: ho fem amb una animació CSS. -->
+    <div class="fonsPlayer">
+      <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+    </div>
+    <!-- Afegim un botó de control per engegar la música. Utilitzem una font d'icones. -->
+    <div class="controlButtons">
+      <?xml version="1.0" standalone="no"?>
+      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+      <svg
+        version="1.0"
+        xmlns="http://www.w3.org/2000/svg"
+        width="60px"
+        height="60px"
+        viewBox="0 0 205.000000 263.000000"
+        preserveAspectRatio="xMidYMid meet"
+        onclick="animacioFuncionalitat(this);"
+        id="play" class="boto-svg"
+        >
+        <g
+          transform="translate(0.000000,263.000000) scale(0.100000,-0.100000)"
+          fill="#000000"
+          stroke="none"
+          class="playButton"
+        >
+          <path
+            d="M0 1310 c0 -721 2 -1310 5 -1310 21 0 2040 1296 2040 1310 0 12
+                -2018 1309 -2037 1310 -5 0 -8 -589 -8 -1310z"
+          />
+        </g>
+      </svg>
+
+      <?xml version="1.0" standalone="no"?>
+      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+      <svg
+        version="1.0"
+        xmlns="http://www.w3.org/2000/svg"
+        width="60px"
+        height="60px"
+        viewBox="0 0 252.000000 254.000000"
+        preserveAspectRatio="xMidYMid meet"
+        onclick="animacioFuncionalitat(this);"
+        id="pause"
+        class="boto-svg"
+      >
+        <g
+          transform="translate(0.000000,254.000000) scale(0.100000,-0.100000)"
+          fill="#000000"
+          stroke="none"
+          class="playButton"
+        >
+          <path
+            d="M0 1270 l0 -1270 510 0 510 0 0 1270 0 1270 -510 0 -510 0 0 -1270z"
+          />
+          <path
+            d="M1510 1270 l0 -1270 505 0 505 0 0 1270 0 1270 -505 0 -505 0 0
+        -1270z"
+          />
+        </g>
+      </svg>
+
+      <div class="volumeControl">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          fill="#000"
+        ></svg>
+        <input
+          type="range"
+          id="volumeSlider"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+          onchange="cambiarVolumen();"
+        />
+      </div>
+    </div>
+
+    
+    
+
+    <!-- Cal seleccionar l'element d'àudio. -->
+    <script src="pt12.js"></script>
+  </body>
+</html>
